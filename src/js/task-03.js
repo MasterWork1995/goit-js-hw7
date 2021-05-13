@@ -16,4 +16,22 @@ const images = [
     },
   ];
 
-  
+const imagesRef = document.querySelector('#gallery');
+
+const makeImagesOptions = (options) => {
+  return options.map(option => {
+    const galleryItemEl = document.createElement('li');
+    galleryItemEl.classList.add('gallery-item');
+    const galleryImgEl = document.createElement('img');
+    galleryImgEl.classList.add('img-item');
+    galleryImgEl.src = option.url;
+    galleryImgEl.alt = option.alt;
+    galleryItemEl.appendChild(galleryImgEl);
+    return galleryItemEl;
+
+  });
+};
+
+const elements = makeImagesOptions(images);
+imagesRef.append(...elements);
+console.log(imagesRef);
