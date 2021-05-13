@@ -1,7 +1,7 @@
-const categoriesRef = document.querySelector('#categories');
-console.log(`В списке ${categoriesRef.children.length} категории.`);
-
 const catItemRef = document.querySelectorAll('.item');
+
+console.log(`В списке ${catItemRef[0].parentElement.children.length} категории.`);
+
 console.log(`Категория: ${catItemRef[0].firstElementChild.textContent}`);
 console.log(`Количество элементов: ${catItemRef[0].lastElementChild.children.length}`);
 
