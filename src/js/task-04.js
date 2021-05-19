@@ -8,16 +8,23 @@ const counter = {
     }
 }
 
-const decrementBtn = document.querySelector("[data-action=decrement]");
-const incrementBtn = document.querySelector("[data-action=increment]");
-const counterValue = document.querySelector("#value");
+// const decrementBtn = document.querySelector("[data-action=decrement]");
+// const incrementBtn = document.querySelector("[data-action=increment]");
+// const counterValue = document.querySelector("#value");
 
-decrementBtn.addEventListener("click", function () {
-    counter.decrement();
-    counterValue.textContent = counter.value;
-});
+const refs = {
+    incrementBtn: document.querySelector("[data-action=increment]"),
+    decrementBtn: document.querySelector("[data-action=decrement]"),
+    counterValue: document.querySelector("#value")
+};
 
-incrementBtn.addEventListener("click", function () {
+refs.incrementBtn.addEventListener("click", function () {
     counter.increment();
-    counterValue.textContent = counter.value;
+    refs.counterValue.textContent = counter.value;
 });
+
+refs.decrementBtn.addEventListener("click", function () {
+    counter.decrement();
+    refs.counterValue.textContent = counter.value;
+});
+
