@@ -3,7 +3,8 @@ const inputChange = document.querySelector('#validation-input');
 inputChange.addEventListener('blur', onInputLength);
 
 function onInputLength (event) {
-    if (event.currentTarget.value.length == inputChange.dataset.length) {
+    const lengthData = inputChange.dataset.length;
+    if (event.currentTarget.value.length === parseInt(lengthData)) {
         inputChange.classList.add('valid');
         inputChange.classList.remove('invalid');
     } else {
