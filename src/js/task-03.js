@@ -19,11 +19,11 @@ const images = [
 const imagesRef = document.querySelector('#gallery');
 
 const insertGallery = (array) => {
-  const makeItemsGallery = array => array.map(({ url, alt }) => {return `<li> <img src="${url}" alt="${alt}"> </li>`});
+  const makeItemsGallery = array => array.map(({ url, alt }) => {return `<li> <img src="${url}" alt="${alt}"> </li>`}).join('');
 
   imagesRef.insertAdjacentHTML('afterbegin', makeItemsGallery(array));
   imagesRef.classList.add("list", "js-gallery__list");
-  imagesRef.querySelectorAll("li").forEach(item => item.classList.add("js-gallery__item"))
+  imagesRef.querySelectorAll("li").forEach(item => item.classList.add("js-gallery__item"));
 };
 
 insertGallery(images);
